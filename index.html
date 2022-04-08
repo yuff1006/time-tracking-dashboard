@@ -19,12 +19,6 @@
     <link href="./normalize.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
     <title>Frontend Mentor | Time tracking dashboard</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
   </head>
   <body class="page">
     <main class="content">
@@ -115,7 +109,7 @@
           <div
             class="tracker__item-img-container tracker__item-img-container_selfcare"
           >
-            <img class="tracker__item-img" src="./images/icon-self-care.svg" />
+            <img class="tracker__item-img" src="./images/icon-selfcare.svg" />
           </div>
           <div class="tracker__item-content">
             <h3 class="tracker__item-title">Self Care</h3>
@@ -125,11 +119,18 @@
         </li>
       </ul>
     </main>
-    <!-- <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Yuffie Hu</a>.
-    </footer> -->
+    <template id="tracker"
+      ><li class="tracker__item">
+        <div class="tracker__item-img-container">
+          <img class="tracker__item-img" src="" />
+        </div>
+        <div class="tracker__item-content">
+          <h3 class="tracker__item-title"></h3>
+          <p class="tracker__item-current-hours"></p>
+          <p class="tracker__item-previous-hours"></p>
+        </div>
+      </li>
+    </template>
+    <script type="module" src="./scripts/Tracker.js"></script>
   </body>
 </html>
