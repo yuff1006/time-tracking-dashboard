@@ -1,4 +1,6 @@
-import { Card, trackerData } from "./Tracker.js";
+const jsonData = require("../data.json");
+console.log(jsonData);
+// import { Card, trackerData } from "./Tracker.js";
 
 const dailyButton = document.querySelector("#daily");
 const weeklyButton = document.querySelector("#weekly");
