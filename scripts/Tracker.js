@@ -1,3 +1,6 @@
+const fetchData = fetch("data.json")
+  .then((res) => res.json())
+  .then((trackerData) => {});
 export class Card {
   constructor(category, timeframe) {
     this._category = category;
