@@ -1,108 +1,3 @@
-export const trackerData = [
-  {
-    title: "work",
-    timeframes: {
-      daily: {
-        current: 5,
-        previous: 7,
-      },
-      weekly: {
-        current: 32,
-        previous: 36,
-      },
-      monthly: {
-        current: 103,
-        previous: 128,
-      },
-    },
-  },
-  {
-    title: "play",
-    timeframes: {
-      daily: {
-        current: 1,
-        previous: 2,
-      },
-      weekly: {
-        current: 10,
-        previous: 8,
-      },
-      monthly: {
-        current: 23,
-        previous: 29,
-      },
-    },
-  },
-  {
-    title: "study",
-    timeframes: {
-      daily: {
-        current: 0,
-        previous: 1,
-      },
-      weekly: {
-        current: 4,
-        previous: 7,
-      },
-      monthly: {
-        current: 13,
-        previous: 19,
-      },
-    },
-  },
-  {
-    title: "exercise",
-    timeframes: {
-      daily: {
-        current: 1,
-        previous: 1,
-      },
-      weekly: {
-        current: 4,
-        previous: 5,
-      },
-      monthly: {
-        current: 11,
-        previous: 18,
-      },
-    },
-  },
-  {
-    title: "social",
-    timeframes: {
-      daily: {
-        current: 1,
-        previous: 3,
-      },
-      weekly: {
-        current: 5,
-        previous: 10,
-      },
-      monthly: {
-        current: 21,
-        previous: 23,
-      },
-    },
-  },
-  {
-    title: "selfcare",
-    timeframes: {
-      daily: {
-        current: 0,
-        previous: 1,
-      },
-      weekly: {
-        current: 2,
-        previous: 2,
-      },
-      monthly: {
-        current: 7,
-        previous: 11,
-      },
-    },
-  },
-];
-
 export class Card {
   constructor(category, timeframe) {
     this._category = category;
@@ -114,7 +9,7 @@ export class Card {
       .content.querySelector(".tracker__item")
       .cloneNode(true);
   }
-  generateCard() {
+  generateCard(trackerData) {
     const cardEl = this._getTemplate();
     cardEl.querySelector(
       ".tracker__item-img"
@@ -127,7 +22,7 @@ export class Card {
     } else {
       cardEl.querySelector(".tracker__item-title").textContent = this._category;
     }
-    const returnedHours = this._generateHours();
+    const returnedHours = this._generateHours(trackerData);
     cardEl.querySelector(
       ".tracker__item-current-hours"
     ).textContent = `${returnedHours.current}hrs`;
@@ -136,7 +31,7 @@ export class Card {
     ).textContent = `${returnedHours.previous}hrs`;
     return cardEl;
   }
-  _generateHours() {
+  _generateHours(trackerData) {
     const objectInThatCategory = trackerData.find(
       (obj) => obj.title === this._category
     );
