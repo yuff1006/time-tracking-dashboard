@@ -1,6 +1,6 @@
 export class Card {
   constructor(category, timeframe) {
-    this._category = category.toLowerCase();
+    this._category = category;
     this._timeframe = timeframe;
   }
   _getTemplate() {
