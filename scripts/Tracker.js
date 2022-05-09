@@ -11,9 +11,9 @@ export class Card {
   }
   generateCard(trackerData) {
     const cardEl = this._getTemplate();
-    cardEl.querySelector(
-      ".tracker__item-img"
-    ).src = `./images/icon-${this._category}.svg`;
+    const cardImage = cardEl.querySelector(".tracker__item-img");
+    cardImage.src = `./images/icon-${this._category}.svg`;
+    cardImage.alt = this._category;
     cardEl
       .querySelector(".tracker__item-img-container")
       .classList.add(`tracker__item-img-container_${this._category}`);

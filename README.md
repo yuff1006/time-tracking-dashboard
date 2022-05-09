@@ -27,6 +27,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - JavaScript Object Oriented Programming
+- Asynchronous Programming with API
 
 ### Continued development
 
