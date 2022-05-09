@@ -1,5 +1,4 @@
 import { Card } from "./Tracker.js";
-
 const dailyButton = document.querySelector("#daily");
 const weeklyButton = document.querySelector("#weekly");
 const monthlyButton = document.querySelector("#monthly");
